@@ -10,6 +10,7 @@ public class StudentRegistrationForm extends BaseTest {
 
     @Test
     @Tag("registrationFormTest")
+    @Tag("Owner")
     void registration() {
 
         step("Открыть форму регистрации", () -> {
