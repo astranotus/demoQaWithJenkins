@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -8,6 +9,7 @@ import static tests.TestData.*;
 public class StudentRegistrationForm extends BaseTest {
 
     @Test
+    @Tag("registrationFormTest")
     void registration() {
 
         step("Открыть форму регистрации", () -> {

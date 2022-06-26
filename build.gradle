@@ -54,3 +54,21 @@ tasks.withType(Test) {
         }
     }
 }
+
+task prop_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "test1"
+    }
+}
+
+task owner_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "owner"
+    }
+}
+
+task registration_form_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "registrationFormTest"
+    }
+}
