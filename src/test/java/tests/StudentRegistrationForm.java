@@ -9,7 +9,7 @@ import static tests.TestData.*;
 public class StudentRegistrationForm extends BaseTest {
 
     @Test
-    @Tag("Owner")
+    @Tag("owner")
     void registration() {
 
         step("Открыть форму регистрации", () -> {
