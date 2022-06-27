@@ -17,6 +17,6 @@ public class OwnerTest {
 
         System.out.println("Login " + login);
         System.out.println("Password " + password);
-        System.out.println("BaseUrl " + remoteDriver);
+        System.out.println("remoteDriver " + remoteDriver);
     }
 }
