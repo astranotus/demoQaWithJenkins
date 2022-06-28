@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.CredentialsConfig;
 import helpers.Attach;
@@ -32,6 +33,11 @@ public class BaseTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), config.remoteDriver());
+    }
+
+    @BeforeEach
+    public void beforeEach() {
+        Selenide.open(Configuration.baseUrl);
     }
 
     @AfterEach
