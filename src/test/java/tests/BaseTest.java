@@ -15,10 +15,10 @@ public class BaseTest {
 
     RegistrationForm registraionForm = new RegistrationForm();
     TestData testData = new TestData();
-    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+    static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
     @BeforeAll
-    void beforeAll() {
+    static void beforeAll() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -28,7 +28,7 @@ public class BaseTest {
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = config.remoteDriver();
+        Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), config.remoteDriver());
     }
 
     @AfterEach
